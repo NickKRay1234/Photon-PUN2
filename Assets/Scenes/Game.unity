@@ -389,6 +389,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!4 &1074947139291201070 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5835361260886091347, guid: d6834fe065295814d8d657cc943fffec, type: 3}
+  m_PrefabInstance: {fileID: 6778379904208001149}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1623905268233705835 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5231179048041988374, guid: d6834fe065295814d8d657cc943fffec, type: 3}
+  m_PrefabInstance: {fileID: 6778379904208001149}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1623905268233705836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623905268233705835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba2446fb6d5a0b478adb8eb3d755ed8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseSensitivity: 1000
+  _playerBody: {fileID: 1074947139291201070}
 --- !u!1001 &6778379904208001149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -396,6 +420,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5231179048041988374, guid: d6834fe065295814d8d657cc943fffec, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5804635245683529617, guid: d6834fe065295814d8d657cc943fffec, type: 3}
       propertyPath: m_Name
       value: First_Person_Player
