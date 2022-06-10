@@ -257,6 +257,7 @@ GameObject:
   - component: {fileID: 2218862105157141069}
   - component: {fileID: 1887062795345591544}
   - component: {fileID: 3446224961817337840}
+  - component: {fileID: 1351277171}
   m_Layer: 0
   m_Name: weapon
   m_TagString: Untagged
@@ -327,6 +328,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1351277171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2733946942860470940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c7ecf3f56ca65a409305576c90b33d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainCamera: {fileID: 6778379906047169615}
+  _range: 100
+  _damage: 25
+  _animator: {fileID: 1893440053007730294}
 --- !u!1 &2809268824630622216
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +603,7 @@ Animator:
   m_GameObject: {fileID: 5231179048041988374}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0e0f23432f1e2ff4cb5283a865e0f974, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -682,6 +699,7 @@ GameObject:
   - component: {fileID: 5835361260886091347}
   - component: {fileID: 1053720938830041069}
   - component: {fileID: 1053720938830041070}
+  - component: {fileID: 41579136}
   m_Layer: 0
   m_Name: First_Person_Player
   m_TagString: Player
@@ -736,7 +754,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1053720938830041069}
-  _speed: 12
+  _groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _groundCheck: {fileID: 1972233339}
+--- !u!114 &41579136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5804635245683529617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ecfc4c2e214a34d8cad0e1b21966c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 25
+  _health: 100
 --- !u!1 &6393078898617504778
 GameObject:
   m_ObjectHideFlags: 0
