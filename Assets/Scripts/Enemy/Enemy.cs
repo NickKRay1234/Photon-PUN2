@@ -1,4 +1,3 @@
-using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,7 +7,6 @@ using UnityEngine.AI;
         [SerializeField] private GameObject _player;
 
         private string RunStateAnimationName = "isRunning";
-        [SerializeField] private EnemySpawner _enemySpawner;
         private NavMeshAgent _navMeshAgent;
         [SerializeField] private Player _playerHealth;
 
@@ -32,17 +30,17 @@ using UnityEngine.AI;
             if (collision.gameObject == _player)
             {
                 _playerHealth.TakeDamage(_damage);
-                Debug.Log(_playerHealth.Health);
             }
         }
 
         public override void TakeDamage(float damage)
         {
             base.TakeDamage(damage);
+            print(Health);
             if (Health <= 0)
             {
-                _enemySpawner.AliveEnemiesCount--;
                 Destroy(gameObject);
+                EnemySpawner.ReduceEnemyCounter.Invoke();
             }
         }
     }

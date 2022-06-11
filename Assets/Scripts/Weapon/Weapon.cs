@@ -7,22 +7,18 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float _damage = 25f;
     [SerializeField] private Animator _animator;
     private string ShootStateAnimationName = "isShooting";
-    private Enemy _enemy;
+    private Enemy Enemy;
 
     private void Start()
     {
-        _enemy = GetComponent<Enemy>();
+        Enemy = GetComponent<Enemy>();
     }
+    
     private void Update()
     {
-        if (_animator.GetBool(ShootStateAnimationName))
-        {
+        if (_animator.GetBool(ShootStateAnimationName)) 
             _animator.SetBool(ShootStateAnimationName, false);
-        }
-        if (Input.GetMouseButtonDown(0))
-        {
-            Shoot();
-        }
+        if (Input.GetMouseButtonDown(0)) Shoot();
     }
 
     private void Shoot()
@@ -30,8 +26,9 @@ public class Weapon : MonoBehaviour
         _animator.SetBool(ShootStateAnimationName, true);
         if(Physics.Raycast(_mainCamera.position, transform.forward, out RaycastHit hit, _range))
         {
-            _enemy = hit.transform.GetComponent<Enemy>();
-            if (_enemy != null) _enemy.TakeDamage(_damage);
+            Enemy = hit.transform.GetComponent<Enemy>();
+            if (Enemy != null) 
+                Enemy.TakeDamage(_damage);
         }
     }
 }

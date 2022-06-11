@@ -772,6 +772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 25
   _health: 100
+  _healthText: {fileID: 1852870707784493315, guid: 7cd1c9e96f003b743bcbdd520ee70db2, type: 3}
 --- !u!1 &6393078898617504778
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,9 +6,9 @@ public class Player : Character
 {
     [SerializeField] private Text _healthText;
 
-    public override void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
-        base.TakeDamage(Damage);
+        Health -= damage;
         _healthText.text = "Health: " + Health.ToString();
         if (Health <= 0) GameOver.OnGameOver.Invoke();
     }

@@ -1,28 +1,33 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
     public class EnemySpawner : MonoBehaviour
     {
+        public static UnityEvent ReduceEnemyCounter;
 
-        public int AliveEnemiesCount
-        {
-            get => _aliveEnemiesCount;
-            set => _aliveEnemiesCount = value;
-        }
-        
         [SerializeField] private Transform[] _spawnPoints;
         [SerializeField] private GameObject _enemyPrefab;
-        [SerializeField] private int _aliveEnemiesCount = 0;
-        [SerializeField] private int round = 0;
-        [SerializeField] private Text _roundNumber;
+        [SerializeField] private int _aliveEnemy;
+        [SerializeField] private int _roundNumber;
+        [SerializeField] private Text _roundNumberText;
 
+        private void ReduceCounterOfLivingOpponents() { _aliveEnemy--; }
+
+
+        private void Start()
+        {
+            if (ReduceEnemyCounter == null) 
+                ReduceEnemyCounter = new UnityEvent();
+            ReduceEnemyCounter.AddListener(ReduceCounterOfLivingOpponents);
+        }
+        
         private void Update()
         {
-            if (_aliveEnemiesCount == 0)
+            if (_aliveEnemy == 0)
             {
-                round++;
-                StartWave(round);
-                _roundNumber.text = "Round: " + round.ToString();
+                StartWave(++_roundNumber);
+                _roundNumberText.text = "Round: " + _roundNumber.ToString();
             }
         }
 
@@ -32,7 +37,7 @@ using UnityEngine.UI;
             {
                 Transform spawnPoint = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
                 Instantiate(_enemyPrefab, spawnPoint.position, Quaternion.identity);
-                _aliveEnemiesCount++;
+                _aliveEnemy++;
             }
         }
     } 

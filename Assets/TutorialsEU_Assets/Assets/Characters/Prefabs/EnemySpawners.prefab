@@ -145,9 +145,9 @@ MonoBehaviour:
   - {fileID: 6761642607044390662}
   - {fileID: 6761642606262694835}
   _enemyPrefab: {fileID: 7237887403474013486, guid: e75ad5b2b3cd9f74a8288335fb2224f7, type: 3}
-  _aliveEnemiesCount: 0
-  round: 0
-  _roundNumber: {fileID: 0}
+  _aliveEnemy: 0
+  _roundNumber: 0
+  _roundNumberText: {fileID: 0}
 --- !u!1 &6761642606839093646
 GameObject:
   m_ObjectHideFlags: 0
